@@ -40,10 +40,10 @@ def savedata(): #Save data to 'mydata.txt'
         f.write('Loss Percentage = %.3f %% \n' % (per.loss()))
         f.write('Profit [Selled stocks at high] = %.f \n' % (PL.Profit()))
         f.write('Loss [Selled stocks at low] = %.f \n' % (PL.Loss()))
-        f.write('=====================================================================')
+        f.write('======================================================================================')
         f.write('\n')
     f.close()
-    print('DATA SAVED')
+    print('DATA SAVED TO "mydata.txt"')
 
 
 def printdata():
@@ -63,7 +63,7 @@ def printdata():
         print('Loss Percentage = %.3f %% \n' % (per.loss()))
         print('Profit [Selled stocks at high] = %.f \n' % (PL.Profit()))
         print('Loss [Selled stocks at low] = %.f' % (PL.Loss()))
-        print('=====================================================================')
+        print('======================================================================================')
 
 while True:
     decision = input('[B] BUY STOCKS, [O] OPEN PURCHASE HISTORY, [S] SAVE DATA, [E] END, [D] DELETE DATA: ')
@@ -102,13 +102,18 @@ while True:
                 continue 
     elif decision == 'S':
         savedata()
+        print()
     elif decision == 'E':
         sys.exit("Ended system")
+        print()
     elif decision == 'D':
         choice = input('THIS WILL DELETE ALL DATAS ENTER [YES] TO CONFIRM ELSE ENTER [NO]: ')
+        choice = choice.upper()
         if choice == 'YES':
-            os.remove('/Users/TheSky/Desktop/Python/Stockrecords/mydata.txt')
+            os.remove('/Users/TheSky/Desktop/Python/SimpleStockProject/mydata.txt')
+            print('[mydata.txt] file deleted \n')
         else:
+            print()
             continue
     else: 
         print('[error] try again')
