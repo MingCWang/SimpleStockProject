@@ -108,7 +108,7 @@ while True:
         choice = input('THIS WILL DELETE ALL DATAS ENTER [YES] TO CONFIRM ELSE ENTER [NO]: ')
         if choice == 'YES':
             os.remove('/Users/TheSky/Desktop/Python/Stockrecords/mydata.txt')
-        else 
+        else:
             continue
     else: 
         print('[error] try again')
